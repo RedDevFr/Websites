@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonk AirDrop - Welcome</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <style>
+        /* Styles de base */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .button {
+            background-color: orange;
+            color: black;
+            font-size: 16px;
+            padding: 15px 25px;
+            border: 2px solid orange;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 250px;
+            margin: 20px auto;
+            text-align: center;
+            font-weight: bold;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ff8000;
+            border-color: #ff8000;
+        }
+
+        .button:active {
+            background-color: #ff6600;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .developer-logos img, .partner-section img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .developer-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .developer-logos img {
+            width: calc(33.333% - 20px);
+            max-width: 100%;
+            height: auto;
+        }
+
+        .partner-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .partner-section img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .partner-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .developer-logos img {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .partner-section {
+                grid-template-columns: 1fr;
+            }
+
+            .developer-logos img {
+                width: 100%;
+            }
+        }
+
+        /* Ensures footer is at the bottom of the page */
+        footer p {
+            margin: 20px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto; /* Ensures the footer stays at the bottom */
+        }
+
+        .contact-us-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo-container">
+            <img src="images/logo2.png" alt="Main Logo">
+        </div>
+        <h1>🚀 Welcome to Bonk AirDrop! 🎉</h1>
+        <p class="description">We are giving away <strong>$500,000 worth of tokens</strong> to our community! Join us in revolutionizing DeFi. 💸</p>
+    </header>
+
+    <section>
+        <h2>Our Mission 🚀</h2>
+        <p class="description">Bonk AirDrop is committed to distributing <strong>$500,000 worth of tokens</strong> to onboard users into DeFi and help the community thrive. We aim to be a major player in the DeFi ecosystem by ensuring security, speed, and transparency.</p>
+    </section>
+
+    <div class="logo-container">
+        <img src="images/logo.png" alt="Furore Image">
+    </div>
+    
+    <button class="button" onclick="window.location.href='check.html'">Check Eligibility 🔎</button>
+
+    <!-- Section for Chart -->
+    <section class="chart-section">
+        <h2>Our Key Focus Areas 📊</h2>
+        <p class="chart-description">We are dedicated to the success and growth of our community. Here are the key pillars of Bonk AirDrop:</p>
+
+        <div>
+            <img src="images/color_1.png" alt="Security">
+            <p><strong>Security 🔐</strong></p>
+            <p>We prioritize the safety of our users' funds and personal data, using top-notch encryption and safety protocols to guarantee a secure experience.</p>
+        </div>
+
+        <div>
+            <img src="images/color_2.png" alt="Blockchain">
+            <p><strong>Blockchain 🛠️</strong></p>
+            <p>Utilizing decentralized blockchain technology, we ensure that all transactions are transparent, traceable, and immutable for our users' peace of mind.</p>
+        </div>
+
+        <div>
+            <img src="images/color_3.png" alt="Transparency">
+            <p><strong>Transparency 👀</strong></p>
+            <p>We value complete transparency, providing our community with real-time updates and full insight into the allocation and distribution of our tokens.</p>
+        </div>
+
+        <div>
+            <img src="images/color_4.png" alt="Speed">
+            <p><strong>Speed ⚡</strong></p>
+            <p>Our cutting-edge technology ensures lightning-fast transaction processing, allowing us to keep pace with the ever-evolving DeFi landscape.</p>
+        </div>
+
+        <div>
+            <img src="images/color_5.png" alt="Scalability">
+            <p><strong>Scalability 📈</strong></p>
+            <p>Bonk AirDrop is designed to scale as the demand grows, allowing us to continually expand the platform's reach without compromising quality.</p>
+        </div>
+
+        <div>
+            <img src="images/color_6.png" alt="Innovation">
+            <p><strong>Innovation 🚀</strong></p>
+            <p>We embrace continuous innovation, staying ahead of the curve with new features and integrations that enhance the DeFi experience for our users.</p>
+        </div>
+
+        <div>
+            <img src="images/color_7.png" alt="Community">
+            <p><strong>Community 💬</strong></p>
+            <p>Bonk AirDrop is built on a foundation of community engagement, where every voice is heard, and our users are at the heart of everything we do.</p>
+        </div>
+    </section>
+
+    <!-- New Buttons Below Chart Section -->
+    <section class="button-section">
+        <button class="button" onclick="window.location.href='faq.html'">FAQ ❓</button>
+        <button class="button" onclick="window.location.href='roadmap.html'">Roadmap 🛣️</button>
+        <button class="button" onclick="window.location.href='rewards.html'">Rewards 🎁</button>
+        <button class="button" onclick="window.location.href='news.html'">News 📰</button>
+    </section>
+
+    <!-- Developers Section Removed Images, Replaced by About Us Button -->
+    <section class="developers-section">
+        <h2>Meet the Developers 👩‍💻👨‍💻</h2>
+        <button class="button" onclick="window.location.href='aboutus.html'">About Us 💡</button>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partner-section">
+        <h2>Our Partners 🤝</h2>
+        <div>
+            <img src="images/01.png" alt="Partner 1">
+            <img src="images/02.png" alt="Partner 2">
+            <img src="images/03.png" alt="Partner 3">
+            <img src="images/04.png" alt="Partner 4">
+            <img src="images/05.png" alt="Partner 5">
+            <img src="images/06.png" alt="Partner 6">
+            <img src="images/07.png" alt="Partner 7">
+            <img src="images/08.png" alt="Partner 8">
+            <img src="images/09.png" alt="Partner 9">
+            <img src="images/10.png" alt="Partner 10">
+            <img src="images/11.png" alt="Partner 11">
+            <img src="images/12.png" alt="Partner 12">
+            <img src="images/13.png" alt="Partner 13">
+            <img src="images/14.png" alt="Partner 14">
+            <img src="images/15.png" alt="Partner 15">
+            <img src="images/16.png" alt="Partner 16">
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us-section">
+        <h2>Contact Us 📩</h2>
+        <p>If you have any questions or need assistance, please reach out to us. We are here to help!</p>
+        <a href="contact.html" class="button">Contact Us 📧</a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Bonk . All rights reserved.</p>
+    </footer>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('menuList');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+</body>
+</html>

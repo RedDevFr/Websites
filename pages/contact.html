@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* Global Styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background: url('../images/bg-slider.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 1000px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Index Button */
+        .index-btn {
+            background-color: #FFA500;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            display: block;
+            margin: 30px auto;
+            text-decoration: none;
+            width: 200px;
+        }
+
+        .index-btn:hover {
+            background-color: #e68a00;
+        }
+
+        /* Section Headers */
+        h1, h2 {
+            color: #FFA500;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 90%;
+            max-width: 400px;
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.2rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background-color: #333;
+            color: white;
+        }
+
+        .contact-form button {
+            background-color: #FFA500;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #e68a00;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            color: #00FF00;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 15px;
+            font-size: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1, h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <!-- Index Button -->
+        <a href="index.html" class="index-btn">Go to Index</a>
+
+        <!-- About Us Section -->
+        <section class="about-us-section">
+            <div class="container">
+                <h1>About Us</h1>
+                <p class="description">We are a team of passionate developers and blockchain enthusiasts focused on revolutionizing the future of technology.</p>
+
+                <h2>Contact Us</h2>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                    <p class="success-message" id="successMessage">Email sent successfully!</p>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+            let successMessage = document.getElementById("successMessage");
+
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            successMessage.style.display = "block";
+
+            // Reset form fields
+            document.getElementById("contactForm").reset();
+
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>

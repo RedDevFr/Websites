@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <style>
+        /* Global Styles */
+        body {
+            background: url('../images/bg-slider.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        /* Main Container */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px;
+            padding: 20px;
+            flex-grow: 1;
+            position: relative; /* Add this line to help center the logo */
+        }
+
+        /* Logo */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute; /* This centers the logo at the top of the container */
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%); /* Center the logo horizontally */
+            margin-bottom: 40px;
+        }
+
+        .logo-container img {
+            width: 200px;
+            height: auto;
+        }
+
+        /* Header */
+        h1 {
+            color: #FFA500;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* News Section */
+        .news-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .news-post {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .news-post h2 {
+            color: #FFA500;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .news-post .date {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .news-post p {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        /* Button */
+        .center-btn {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .center-btn a {
+            background-color: #FFA500;
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .center-btn a:hover {
+            background-color: #e68900;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: #ccc;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            margin-top: auto;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .news-post h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Main Container -->
+<div class="main-container">
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="images/logo2.png" alt="Logo">
+    </div>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <h1>📰 Latest News</h1>
+        <div class="news-container">
+            <!-- News Post 1 -->
+            <div class="news-post">
+                <h2>📱 February 18, 2025 - Mobile App Beta Launch</h2>
+                <div class="date">Posted on: February 18, 2025</div>
+                <p>The beta version of our mobile app has been launched, allowing users to access all platform features directly from their smartphones. Feedback is already pouring in! 🚀</p>
+            </div>
+            
+            <!-- News Post 2 -->
+            <div class="news-post">
+                <h2>🤝 February 10, 2025 - New Partnership Formed</h2>
+                <div class="date">Posted on: February 10, 2025</div>
+                <p>We are excited to announce a new strategic partnership with a major industry player. This collaboration will bring great benefits to our platform and enhance the overall user experience. 🔥</p>
+            </div>
+
+            <!-- News Post 3 -->
+            <div class="news-post">
+                <h2>🚀 January 25, 2025 - Major Feature Update Released</h2>
+                <div class="date">Posted on: January 25, 2025</div>
+                <p>We are excited to announce the release of our latest feature update! Our team has been working tirelessly to improve the user experience and bring new functionalities to the platform. Stay tuned for more updates! 🎉</p>
+            </div>
+
+            <!-- News Post 4 -->
+            <div class="news-post">
+                <h2>🧪 December 15, 2024 - Initial Beta Testing Completed</h2>
+                <div class="date">Posted on: December 15, 2024</div>
+                <p>We are pleased to announce that our initial beta testing phase has been successfully completed! A huge thank you to everyone who participated in the beta! 🙌</p>
+            </div>
+
+            <!-- News Post 5 -->
+            <div class="news-post">
+                <h2>🔗 November 10, 2024 - Smart Contract Deployment Completed</h2>
+                <div class="date">Posted on: November 10, 2024</div>
+                <p>We are thrilled to announce that the smart contract for our platform has been successfully deployed! 🎯</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Button -->
+    <div class="center-btn">
+        <a href="index.html">🏠 Go to Index</a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Bonk. All Rights Reserved. ⚡</p>
+</footer>
+
+</body>
+</html>

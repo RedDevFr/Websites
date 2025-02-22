@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Rewards 🎁</title>
+    <style>
+        /* Global Styles */
+        body {
+            background: url('../images/bg-slider.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            overflow-y: auto;
+        }/* Main Container */
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1200px;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    /* Logo */
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .logo-container img {
+        width: 200px;
+        height: auto;
+    }
+
+    /* Header */
+    h1 {
+        color: #FFA500;
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+
+    /* Rewards Section */
+    .rewards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .reward-item {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        transition: transform 0.3s ease;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .reward-item:hover {
+        transform: scale(1.05);
+    }
+
+    .reward-item h3 {
+        color: #FFA500;
+        font-size: 2.2rem;
+    }
+
+    .reward-item p {
+        color: #ccc;
+        font-size: 1.2rem;
+    }
+
+    /* Rewards Text Section */
+    .rewards-description {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        color: #ccc;
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+
+    /* Button */
+    .center-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .center-btn a {
+        background-color: #FFA500;
+        color: black;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        display: inline-block;
+    }
+
+    .center-btn a:hover {
+        background-color: #e68900;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 50px;
+        background-color: black;
+        color: #ccc;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .reward-item h3 {
+            font-size: 1.8rem;
+        }
+    }
+</style>
+
+</head>
+<body><!-- Main Container -->
+<div class="main-container">
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="images/logo2.png" alt="🚀 Logo">
+    </div>
+
+    <!-- Rewards Section -->
+    <section class="rewards-section">
+        <h1>🎉 Our Rewards 🎁</h1>
+        <div class="rewards-description">
+            <p>We value our community, and we’ve created a rewarding system to thank you for your participation and support. Here are the rewards you can earn! 🎊</p>
+        </div>
+
+        <div class="rewards-container">
+            <!-- Reward Items -->
+            <div class="reward-item">
+                <h3>🏅 Reward 1</h3>
+                <p>Earn up to $50 by completing basic tasks and signing up early! 🎯</p>
+            </div>
+            <div class="reward-item">
+                <h3>💰 Reward 2</h3>
+                <p>Get $100 for participating in our referral program! 🔗</p>
+            </div>
+            <div class="reward-item">
+                <h3>🚀 Reward 3</h3>
+                <p>Exclusive $200 for completing advanced tasks! 🏆</p>
+            </div>
+            <div class="reward-item">
+                <h3>🔥 Reward 4</h3>
+                <p>Receive a special $500 reward for being an active member! 💎</p>
+            </div>
+            <div class="reward-item">
+                <h3>👑 Reward 5</h3>
+                <p>Earn $1000 for major contributions! 🏅</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Button -->
+    <div class="center-btn">
+        <a href="index.html">⬅️ Go to Index</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bonk. All Rights Reserved. 🌟</p>
+    </footer>
+</div>
+
+</body>
+</html>

