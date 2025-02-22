@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility Check</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('images/bg-slider.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            background-color: rgba(34, 34, 34, 0.8);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 150px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        h1 {
+            color: #FF7F00;
+            margin-top: 20px;
+            font-size: 2rem;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .address-input {
+            margin-top: 20px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 2px solid #FF7F00;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .check-btn {
+            width: 80%;
+            background: linear-gradient(90deg, #FF7F00, #FFD700);
+            color: black;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .check-btn:hover {
+            background: linear-gradient(90deg, #FFD700, #FF7F00);
+        }
+
+        .status-box {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        .important-message {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #FF7F00;
+            font-weight: bold;
+        }
+
+        .button-container {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .index-btn {
+            display: inline-block;
+            width: 80%;
+            max-width: 300px;
+            background-color: orange;
+            color: black;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.1rem;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .index-btn:hover {
+            background-color: #ffcc00;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: -90px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            z-index: 1;
+        }
+
+        /* Style for loading bar */
+        #loadingBar {
+            width: 100%;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none; /* Hidden by default */
+        }
+
+        #progress {
+            width: 0%;
+            height: 100%;
+            background-color: #FF7F00;
+            border-radius: 10px;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="important-message">
+            🚀 Welcome to Our Exclusive Rewards Program!<br>
+            Unlock amazing rewards by simply participating with your Ethereum address! 🎉<br>
+            Claim up to $500 in rewards — it's simple, transparent, and hassle-free! 💸<br>
+            ⚠️ Limited spots available, so act quickly to secure your reward! 💥
+        </div>
+
+        <img src="images/logo.png" alt="Logo" class="logo">
+
+        <h1>Eligibility Verification 📝</h1>
+        <p class="description">Enter your Ethereum address below to check if you qualify for an exciting reward! 🎁<br> This is a limited-time opportunity — don’t miss your chance! ⏳</p>
+
+        <div class="address-input">
+            <input type="text" id="address" placeholder="Enter your Ethereum address" />
+            <button class="check-btn" onclick="checkEligibility()">Check Eligibility</button>
+        </div>
+
+        <div class="status-box">
+            <p id="status">Check Pending ⏳ </p>
+        </div>
+
+        <!-- Add loading bar here -->
+        <div id="loadingBar">
+            <div id="progress"></div>
+        </div>
+
+    </div>
+
+    <!-- Bouton correctement centré entre le conteneur et le footer -->
+    <div class="button-container">
+        <a href="index.html" class="index-btn">Go To Index</a>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Bonk. All rights reserved.
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script src="js/tokens.js"></script>
+    <script src="js/checkEligibility.js"></script>
+
+</body>
+</html>
